@@ -54,6 +54,7 @@ def parse_known_args():
 def main():
     args, otherthings, parser = parse_known_args()
 
+    setup_logging()
     qmon.monitor.monitor_queue(queue_name=args.queue_name, host=args.host, port=args.port, room=args.room)
     return 0
 
