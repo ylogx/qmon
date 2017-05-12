@@ -15,7 +15,7 @@ def redis_connection(host, port):
     return StrictRedis(host=host, port=port)
 
 
-def get_items_in_queue(queue_name, redis_conn):
+def get_items_in_queue(queue_name, redis_conn, default=None):
     type_name = redis_conn.type(queue_name).decode()
     if type_name == 'hash':
         length_op = redis_conn.hlen
@@ -24,5 +24,8 @@ def get_items_in_queue(queue_name, redis_conn):
     elif type_name == 'set':
         length_op = redis_conn.scard
     else:
-        raise ValueError('Queue empty or Unknown type_name "{}" of queue "{}"'.format(type_name, queue_name))
+        if default is not None:
+            length_op = lambda _: default
+        else:
+            raise ValueError('Queue empty or Unknown type_name "{}" of queue "{}"'.format(type_name, queue_name))
     return length_op(queue_name)

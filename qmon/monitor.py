@@ -46,7 +46,7 @@ def monitor_queue(queue_name, host, port, room):
     last_items_length = 0
     rd = qmon.status.redis_connection_cached(host, port)
     while items_in_queue:
-        items_in_queue = qmon.status.get_items_in_queue(queue_name, redis_conn=rd)
+        items_in_queue = qmon.status.get_items_in_queue(queue_name, redis_conn=rd, default=0)
         if last_items_length != items_in_queue:
             message = '{} queue status: {:,d}'.format(queue_name, items_in_queue)
 
