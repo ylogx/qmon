@@ -9,7 +9,7 @@ import hypchat
 import qmon.status
 
 logger = logging.getLogger(__name__)
-TIME_GAP_IN_SECONDS = 10 * 60
+TIME_GAP_IN_SECONDS = 5 * 60
 APPROX_QUEUE_SIZE = 1e10
 NUM_ITEMS_BEFORE_NOTIFY_TOLERANCE = 500
 
