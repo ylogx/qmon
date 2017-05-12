@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 #
 #   main.py - All commandline interactions
-#   This file is a part of RMon.
+#   This file is a part of QMon.
 #
 #   Copyright (c) 2017 Shubham Chaudhary <me@shubhamchaudhary.in>
 #
-#   RMon is free software: you can redistribute it and/or modify
+#   QMon is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
 #   the Free Software Foundation, either version 3 of the License, or
 #   (at your option) any later version.
 #
-#   RMon is distributed in the hope that it will be useful,
+#   QMon is distributed in the hope that it will be useful,
 #   but WITHOUT ANY WARRANTY; without even the implied warranty of
 #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #   GNU General Public License for more details.
 #
 #   You should have received a copy of the GNU General Public License
-#   along with RMon. If not, see <http://www.gnu.org/licenses/>.
+#   along with QMon. If not, see <http://www.gnu.org/licenses/>.
 #
 
 from __future__ import print_function
@@ -24,12 +24,12 @@ from __future__ import print_function
 import logging
 from argparse import ArgumentParser
 
-import rmon.monitor
-from rmon import __version__
+import qmon.monitor
+from qmon import __version__
 
 
 def print_version():
-    print('RMon version %s' % __version__)
+    print('QMon version %s' % __version__)
     print('Copyright (c) 2017 by Shubham Chaudhary.')
     print('License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>')
     print('This is free software: you are free to change and redistribute it.')
@@ -54,15 +54,15 @@ def parse_known_args():
 def main():
     args, otherthings, parser = parse_known_args()
 
-    rmon.monitor.monitor_queue(queue_name=args.queue_name, host=args.host, port=args.port, room=args.room)
+    qmon.monitor.monitor_queue(queue_name=args.queue_name, host=args.host, port=args.port, room=args.room)
     return 0
 
 
 def setup_logging():
     logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s')
     logging.getLogger('root').setLevel(logging.DEBUG)
-    logging.getLogger('rmon').setLevel(logging.DEBUG)
-    logging.getLogger('rmon.monitor').setLevel(logging.DEBUG)
+    logging.getLogger('qmon').setLevel(logging.DEBUG)
+    logging.getLogger('qmon.monitor').setLevel(logging.DEBUG)
 
 
 if __name__ == '__main__':

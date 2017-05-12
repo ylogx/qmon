@@ -3,7 +3,7 @@
 
 import sys
 
-from rmon import main
+from qmon import main
 
 try:
     main.setup_logging()

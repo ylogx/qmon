@@ -26,18 +26,18 @@ def get_long_description():
 
 add_keywords = dict(
     entry_points={
-        'console_scripts': ['rmon = rmon.main:main'],
+        'console_scripts': ['qmon = qmon.main:main'],
     }, )
 
 setup(
-    name='RMon',
+    name='QMon',
     description='Redis Monitor - monitor number of items and more for any type of redis queue',
     version=get_version(),
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     license='GPLv3+',
     author='Shubham Chaudhary',
     author_email='me@shubhamchaudhary.in',
-    url='https://github.com/shubhamchaudhary/rmon',
+    url='https://github.com/shubhamchaudhary/qmon',
     long_description=get_long_description(),
     install_requires=get_requirements(),
     **add_keywords)

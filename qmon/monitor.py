@@ -6,7 +6,7 @@ import time
 
 import hypchat
 
-import rmon.status
+import qmon.status
 
 logger = logging.getLogger(__name__)
 TIME_GAP_IN_SECONDS = 10 * 60
@@ -43,9 +43,9 @@ def monitor_queue(queue_name, host, port, room):
 
     items_in_queue = APPROX_QUEUE_SIZE
     last_notify_items_length = 0
-    rd = rmon.status.redis_connection_cached(host, port)
+    rd = qmon.status.redis_connection_cached(host, port)
     while items_in_queue:
-        items_in_queue = rmon.status.get_items_in_queue(queue_name, redis_conn=rd)
+        items_in_queue = qmon.status.get_items_in_queue(queue_name, redis_conn=rd)
         message = '{} queue status: {:,d}'.format(queue_name, items_in_queue)
 
         notified = notify(message, items_in_queue, last_notify_items_length, room)

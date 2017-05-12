@@ -4,7 +4,7 @@ We love pull requests. Here's a quick guide.
 
 Fork, then clone the repo:
 
-    git clone git@github.com:your-username/rmon.git
+    git clone git@github.com:your-username/qmon.git
 
 Set up your machine:
 
@@ -13,7 +13,7 @@ Make your change. Add tests for your change. Make the tests pass:
 
 Push to your fork and [submit a pull request][pr].
 
-[pr]: https://github.com/shubhamchaudhary/rmon/compare/
+[pr]: https://github.com/shubhamchaudhary/qmon/compare/
 
 At this point you're waiting on us. We will not disappoint you.
 

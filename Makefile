@@ -1,4 +1,4 @@
-PACKAGE="RMon"
+PACKAGE="QMon"
 PACKAGE_LOWER=$(shell echo $(PACKAGE) | sed 's/.*/\L&/')
 PIP_EXEC=pip
 PYTHON_EXEC=python

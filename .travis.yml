@@ -22,8 +22,8 @@ script:
   - nosetests
   - make install
 after_script:
-  - yes | pip uninstall rmon
-  - pip install rmon
+  - yes | pip uninstall qmon
+  - pip install qmon
 after_success:
   - make coverage
   - python-codacy-coverage -r coverage.xml
