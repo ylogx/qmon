@@ -11,6 +11,25 @@ qmon - Redis Monitor
 
 QMon is a redis monitor 
 
+# Installation
+```shell
+pip3 install qmon
+```
+
+# Usage:
+
+```shell
+> export HIP_TOKEN=MyHipChatToken
+> qmon --host localhost --port 6379 --queue-name a_key_in_redis --room RoomInHipChat
+[qmon.monitor] [2017-05-12 12:36:45,248] INFO : Connecting to hipchat
+[qmon.monitor] [2017-05-12 12:36:47,292] INFO : a_key_in_redis queue status: 6. Items: 6. Last Notify: 0
+[qmon.monitor] [2017-05-12 12:37:07,754] INFO : a_key_in_redis queue status: 11. Items: 11. Last Notify: 0
+[qmon.monitor] [2017-05-12 12:37:20,237] INFO : a_key_in_redis queue status: 16. Items: 16. Last Notify: 0
+[qmon.monitor] [2017-05-12 12:37:38,235] INFO : a_key_in_redis queue status: 10. Items: 10. Last Notify: 0
+```
+
+This is how it'll appear in hipchat:
+![hipchat_window](http://i.imgur.com/G1vnPUm.png)
   
 Find us:
   * [PyPi](https://pypi.python.org/pypi/qmon)   
