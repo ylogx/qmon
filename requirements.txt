@@ -1,4 +1,4 @@
-click
-redis
-hiredis
-hypchat
+click==6.7
+hiredis==0.2.0
+hypchat==0.21
+redis==2.10.5
