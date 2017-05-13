@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 
 def get_version():
-    return '0.1.0'
+    return '0.1.1'
 
 
 def get_requirements():
@@ -19,7 +19,7 @@ def get_long_description():
         import pypandoc
         long_description = pypandoc.convert('README.md', 'rst')
     except (IOError, ImportError):
-        with open('README.txt') as fhan:
+        with open('README.md') as fhan:
             long_description = fhan.read()
     return long_description
 
