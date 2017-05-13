@@ -30,8 +30,10 @@ pip3 install qmon
 ```
 
 This is how it'll appear in hipchat:  
+
 ![hipchat_window](http://i.imgur.com/G1vnPUm.png)
 
 
 Find us:
+
   * [PyPi](https://pypi.python.org/pypi/qmon)   

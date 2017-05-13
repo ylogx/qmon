@@ -18,7 +18,10 @@ def get_long_description():
     try:
         import pypandoc
         long_description = pypandoc.convert('README.md', 'rst')
-    except (IOError, ImportError):
+        with open('README.rst', 'w') as fhan:
+            fhan.write(long_description)
+    except (IOError, ImportError) as e:
+        raise e
         with open('README.md') as fhan:
             long_description = fhan.read()
     return long_description
