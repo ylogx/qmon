@@ -18,6 +18,12 @@ def get_long_description():
     try:
         import pypandoc
         long_description = pypandoc.convert('README.md', 'rst')
+
+        readme_note = """\
+        .. note::
+           For the latest source, discussion, etc, please visit the
+           `GitHub repository <https://github.com/shubhamchaudhary/qmon>`_\n\n"""
+        long_description = readme_note + long_description
         with open('README.rst', 'w') as fhan:
             fhan.write(long_description)
     except (IOError, ImportError) as e:
