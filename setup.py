@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 
 def get_version():
-    return '0.2.0'
+    return '0.2.1'
 
 
 def get_requirements():
