@@ -13,6 +13,10 @@ matrix:
     - python: 2.6
     - python: 2.7
     - python: pypy
+addons:
+  apt:
+    packages:
+    - pandoc
 install:
   - pip install -r requirements.txt
   - pip install -r requirements-dev.txt
