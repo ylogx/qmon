@@ -1,11 +1,11 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from distutils.core import setup
 
 from setuptools import find_packages
 
 
 def get_version():
-    return '0.1.1'
+    return '0.2.0'
 
 
 def get_requirements():
@@ -43,7 +43,7 @@ if __name__ == '__main__':
         name='QMon',
         description='Redis Monitor - monitor number of items and more for any type of redis queue',
         version=get_version(),
-        packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
+        packages=find_packages(exclude=['*.tests', '*.tests.*', 'tests.*', 'tests']),
         license='GPLv3+',
         author='Shubham Chaudhary',
         author_email='me@shubhamchaudhary.in',
