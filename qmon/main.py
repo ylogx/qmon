@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 #
 #   main.py - All commandline interactions
 #   This file is a part of QMon.
@@ -18,7 +19,6 @@
 #   You should have received a copy of the GNU General Public License
 #   along with QMon. If not, see <http://www.gnu.org/licenses/>.
 #
-
 from __future__ import print_function
 
 import logging
@@ -26,6 +26,7 @@ from argparse import ArgumentParser
 
 import qmon.monitor
 from qmon import __version__
+from qmon import monitor
 
 
 def print_version():
@@ -43,6 +44,8 @@ def parse_known_args():
     parser.add_argument('--host', required=True, help='Redis host')
     parser.add_argument('--port', '-p', help='Redis port')
     parser.add_argument('--room', '-r', help='HipChat Room')
+    parser.add_argument('--sleep-time', '-t', default=monitor.TIME_GAP_IN_SECONDS, help='Number of seconds to sleep')
+    parser.add_argument('--stop-once-empty', '-s', action='store_true', help='Stop when no items left in queue')
     parser.add_argument('-V', '--version',
                         action='store_true',
                         dest='version',
@@ -55,7 +58,14 @@ def main():
     args, otherthings, parser = parse_known_args()
 
     setup_logging()
-    qmon.monitor.monitor_queue(queue_name=args.queue_name, host=args.host, port=args.port, room=args.room)
+    qmon.monitor.monitor_queue(
+        queue_name=args.queue_name,
+        host=args.host,
+        port=args.port,
+        room=args.room,
+        sleep_time=args.sleep_time,
+        stop_once_empty=args.stop_once_empty
+    )
     return 0
 
 

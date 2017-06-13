@@ -30,9 +30,15 @@ def notify(message, items_in_queue, last_notify_items_length, room):
     return should_notify
 
 
-def monitor_queue(queue_name, host, port, room):
+def monitor_queue(queue_name, host, port, room, sleep_time=TIME_GAP_IN_SECONDS, stop_once_empty=False):
+    sleep_time = int(sleep_time)
+    if sleep_time < 1:
+        raise ValueError('Sleep time too low. Please specify sleep time in seconds.')
+    if room is None:
+        raise ValueError('Please specify a valid room name')
     logger.info('Connecting to hipchat')
-    hc = hypchat.HypChat(os.environ['HIP_TOKEN'])
+    hip_token = os.environ['HIP_TOKEN']  # Please specify your token using: export HIP_TOKEN=my_hipchat_token
+    hc = hypchat.HypChat(hip_token)
     room = hc.get_room(room)
 
     room.notification(
@@ -45,7 +51,7 @@ def monitor_queue(queue_name, host, port, room):
     last_notify_items_length = 0
     last_items_length = 0
     rd = qmon.status.redis_connection_cached(host, port)
-    while items_in_queue:
+    while not stop_once_empty or items_in_queue:
         items_in_queue = qmon.status.get_items_in_queue(queue_name, redis_conn=rd, default=0)
         if last_items_length != items_in_queue:
             message = '{} queue status: {:,d}'.format(queue_name, items_in_queue)
@@ -54,7 +60,7 @@ def monitor_queue(queue_name, host, port, room):
             if notified:
                 last_notify_items_length = items_in_queue
             last_items_length = items_in_queue
-        time.sleep(TIME_GAP_IN_SECONDS)
+        time.sleep(sleep_time)
 
     room.notification(
         'All done for {queue}.'.format(queue=queue_name),
