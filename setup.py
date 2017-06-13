@@ -27,7 +27,7 @@ def get_long_description():
         with open('README.rst', 'w') as fhan:
             fhan.write(long_description)
     except (IOError, ImportError) as e:
-        raise e
+        # raise e
         with open('README.md') as fhan:
             long_description = fhan.read()
     return long_description
