@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
+import os
 from distutils.core import setup
 
 from setuptools import find_packages
 
 
 def get_version():
-    return '0.2.0'
+    return '0.2.1'
 
 
 def get_requirements():
@@ -24,10 +25,13 @@ def get_long_description():
            For the latest source, discussion, etc, please visit the
            `GitHub repository <https://github.com/shubhamchaudhary/qmon>`_\n\n"""
         long_description = readme_note + long_description
-        with open('README.rst', 'w') as fhan:
+        generated_rst_file = 'README.rst'
+        with open(generated_rst_file, 'w') as fhan:
             fhan.write(long_description)
+        if os.path.isfile(generated_rst_file):
+            os.remove(generated_rst_file)
     except (IOError, ImportError) as e:
-        raise e
+        # raise e
         with open('README.md') as fhan:
             long_description = fhan.read()
     return long_description
