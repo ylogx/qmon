@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 
 def get_version():
-    return '0.2.0'
+    return '0.2.1'
 
 
 def get_requirements():
@@ -31,7 +31,7 @@ def get_long_description():
         if os.path.isfile(generated_rst_file):
             os.remove(generated_rst_file)
     except (IOError, ImportError) as e:
-        raise e
+        # raise e
         with open('README.md') as fhan:
             long_description = fhan.read()
     return long_description
