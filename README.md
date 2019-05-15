@@ -1,13 +1,13 @@
 qmon - Redis Monitor
 ====================
 
-[![Join the chat at https://gitter.im/shubhamchaudhary/qmon](https://badges.gitter.im/shubhamchaudhary/qmon.svg)](https://gitter.im/shubhamchaudhary/qmon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/shubhamchaudhary/qmon](https://badges.gitter.im/ylogx/qmon.svg)](https://gitter.im/ylogx/qmon?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![PyPI Version](https://img.shields.io/pypi/v/qmon.svg)](https://pypi.python.org/pypi/qmon) [![PyPI Monthly Downloads](https://img.shields.io/pypi/dm/qmon.svg)](https://pypi.python.org/pypi/qmon) [![PyPI License](https://img.shields.io/pypi/l/qmon.svg)](https://pypi.python.org/pypi/qmon) [![GitHub tag](https://img.shields.io/github/tag/shubhamchaudhary/qmon.svg)](https://github.com/shubhamchaudhary/qmon/releases) [![GitHub release](https://img.shields.io/github/release/shubhamchaudhary/qmon.svg)](https://github.com/shubhamchaudhary/qmon/releases/latest)
+[![PyPI Version](https://img.shields.io/pypi/v/qmon.svg)](https://pypi.python.org/pypi/qmon) [![PyPI Monthly Downloads](https://img.shields.io/pypi/dm/qmon.svg)](https://pypi.python.org/pypi/qmon) [![PyPI License](https://img.shields.io/pypi/l/qmon.svg)](https://pypi.python.org/pypi/qmon) [![GitHub tag](https://img.shields.io/github/tag/ylogx/qmon.svg)](https://github.com/ylogx/qmon/releases) [![GitHub release](https://img.shields.io/github/release/ylogx/qmon.svg)](https://github.com/ylogx/qmon/releases/latest)
 
-[![Build Status Travis-CI](https://travis-ci.org/shubhamchaudhary/qmon.svg)](https://travis-ci.org/shubhamchaudhary/qmon) [![Coverage Status](https://coveralls.io/repos/shubhamchaudhary/qmon/badge.svg?branch=master)](https://coveralls.io/r/shubhamchaudhary/qmon?branch=master) [![Circle CI](https://circleci.com/gh/shubhamchaudhary/qmon.svg?style=svg)](https://circleci.com/gh/shubhamchaudhary/qmon) [![Requirements Status](https://requires.io/github/shubhamchaudhary/qmon/requirements.svg?branch=master)](https://requires.io/github/shubhamchaudhary/qmon/requirements/?branch=master)
+[![Build Status Travis-CI](https://travis-ci.org/ylogx/qmon.svg)](https://travis-ci.org/ylogx/qmon) [![Coverage Status](https://coveralls.io/repos/ylogx/qmon/badge.svg?branch=master)](https://coveralls.io/r/ylogx/qmon?branch=master) [![Circle CI](https://circleci.com/gh/ylogx/qmon.svg?style=svg)](https://circleci.com/gh/ylogx/qmon) [![Requirements Status](https://requires.io/github/ylogx/qmon/requirements.svg?branch=master)](https://requires.io/github/ylogx/qmon/requirements/?branch=master)
 
-[![GitHub issues](https://img.shields.io/github/issues/shubhamchaudhary/qmon.svg?style=plastic)](https://github.com/shubhamchaudhary/qmon/issues) [![Stories in Ready](https://badge.waffle.io/shubhamchaudhary/qmon.png?label=ready&title=Ready)](https://waffle.io/shubhamchaudhary/qmon)
+[![GitHub issues](https://img.shields.io/github/issues/ylogx/qmon.svg?style=plastic)](https://github.com/ylogx/qmon/issues) [![Stories in Ready](https://badge.waffle.io/ylogx/qmon.png?label=ready&title=Ready)](https://waffle.io/ylogx/qmon)
 
 QMon is a redis queue monitor 
 
